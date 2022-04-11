@@ -1,44 +1,49 @@
 const STRONG_ATTACK_VALUE = 17;
 const ATTACK_VALUE = 10;
 const MONISTER_ATTACK_VALUE = 14;
-const HEAL_VALUE=20;
+const HEAL_VALUE = 20;
+const enteredValidInput = parseInt(
+  prompt('enter your life and monister life here :', '')
+);
 
-let chosenMaxLife = 100;
+let chosenMaxLife = parseInt(enteredValidInput);
+if (isNaN(chosenMaxLife) || chosenMaxLife <= 0 ) {
+  chosenMaxLife = 100;
+}
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
-let hasBonusLife=true;
+let hasBonusLife = true;
 
 adjustHealthBars(chosenMaxLife);
 
 //  start rest function
-function rest(){
-   currentMonsterHealth = chosenMaxLife;
-   currentPlayerHealth = chosenMaxLife;  
-   resetGame(chosenMaxLife);
+function rest() {
+  currentMonsterHealth = chosenMaxLife;
+  currentPlayerHealth = chosenMaxLife;
+  resetGame(chosenMaxLife);
 }
 //START FUCTION END_ROUND
-function endRound(){
-  const initialPlayerHealth=currentPlayerHealth;
+function endRound() {
+  const initialPlayerHealth = currentPlayerHealth;
   const playerDamage = dealPlayerDamage(MONISTER_ATTACK_VALUE);
   currentPlayerHealth -= playerDamage;
 
-  if(currentPlayerHealth <=0 && hasBonusLife){
+  if (currentPlayerHealth <= 0 && hasBonusLife) {
     hasBonusLife = false;
     removeBonusLife();
-    currentPlayerHealth=initialPlayerHealth;
+    currentPlayerHealth = initialPlayerHealth;
     setPlayerHealth(initialPlayerHealth);
     alert('you dead but the bouns not allow ');
   }
 
   if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
     alert('you won ');
-    
   } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
     alert('you lost');
   } else if (currentMonsterHealth <= 0 && currentPlayerHealth <= 0) {
     alert('you have a drow');
   }
-  if (currentMonsterHealth<=0 || currentPlayerHealth<=0){
+  if (currentMonsterHealth <= 0 || currentPlayerHealth <= 0) {
     rest();
   }
 }
@@ -52,7 +57,7 @@ function attackMonster(mode) {
   }
   const damage = dealMonsterDamage(maxDamage);
   currentMonsterHealth -= damage;
- endRound();
+  endRound();
 }
 
 //start strong attack handlaer
@@ -68,19 +73,18 @@ function attackHandler() {
 //end of attack functions
 
 //start heail function
-function healPlayerHandler(){
+function healPlayerHandler() {
   let healValue;
-  if (currentPlayerHealth>=chosenMaxLife-HEAL_VALUE){
+  if (currentPlayerHealth >= chosenMaxLife - HEAL_VALUE) {
     alert("you can't heal more than max initail health");
-    healValue=chosenMaxLife-currentPlayerHealth;
-  }else{
-    healValue=HEAL_VALUE; 
+    healValue = chosenMaxLife - currentPlayerHealth;
+  } else {
+    healValue = HEAL_VALUE;
   }
   increasePlayerHealth(HEAL_VALUE);
-  currentPlayerHealth +=HEAL_VALUE;
+  currentPlayerHealth += HEAL_VALUE;
   endRound();
-
 }
 attackBtn.addEventListener('click', attackHandler);
 strongAttackBtn.addEventListener('click', strongAttackHandler);
-healBtn.addEventListener('click',healPlayerHandler);
+healBtn.addEventListener('click', healPlayerHandler);
