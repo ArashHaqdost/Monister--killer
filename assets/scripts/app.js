@@ -10,6 +10,12 @@ let hasBonusLife=true;
 
 adjustHealthBars(chosenMaxLife);
 
+//  start rest function
+function rest(){
+   currentMonsterHealth = chosenMaxLife;
+   currentPlayerHealth = chosenMaxLife;  
+   resetGame(chosenMaxLife);
+}
 //START FUCTION END_ROUND
 function endRound(){
   const initialPlayerHealth=currentPlayerHealth;
@@ -26,10 +32,14 @@ function endRound(){
 
   if (currentMonsterHealth <= 0 && currentPlayerHealth > 0) {
     alert('you won ');
+    
   } else if (currentPlayerHealth <= 0 && currentMonsterHealth > 0) {
     alert('you lost');
   } else if (currentMonsterHealth <= 0 && currentPlayerHealth <= 0) {
     alert('you have a drow');
+  }
+  if (currentMonsterHealth<=0 || currentPlayerHealth<=0){
+    rest();
   }
 }
 //satrt functon attackMonster mode
