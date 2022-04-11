@@ -2,6 +2,9 @@ const STRONG_ATTACK_VALUE = 17;
 const ATTACK_VALUE = 10;
 const MONISTER_ATTACK_VALUE = 14;
 const HEAL_VALUE = 20;
+const MODE_ATTACK='ATTACK';//mode_attack =0;
+const MODE_STRONG_ATTACK="STRONG_ATTACK"; //or may 1;
+
 const enteredValidInput = parseInt(
   prompt('enter your life and monister life here :', '')
 );
@@ -50,9 +53,9 @@ function endRound() {
 //satrt functon attackMonster mode
 function attackMonster(mode) {
   let maxDamage;
-  if (mode === 'ATTACK') {
+  if (mode === MODE_ATTACK) {
     maxDamage = ATTACK_VALUE;
-  } else if (mode === 'STRONG_ATTACK') {
+  } else if (mode === MODE_STRONG_ATTACK) {
     maxDamage = STRONG_ATTACK_VALUE;
   }
   const damage = dealMonsterDamage(maxDamage);
@@ -62,12 +65,12 @@ function attackMonster(mode) {
 
 //start strong attack handlaer
 function strongAttackHandler() {
-  attackMonster('STRONG_ATTACK');
+  attackMonster(MODE_STRONG_ATTACK);
   endRound();
 }
 //START ATTACK HANDLER
 function attackHandler() {
-  attackMonster('ATTACK');
+  attackMonster(MODE_ATTACK);
   endRound();
 }
 //end of attack functions
