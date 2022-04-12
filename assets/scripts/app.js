@@ -189,7 +189,7 @@ for(const entrylog of battleLog) {
   console.log(i++);
   for(const leg in entrylog){
     console.log(`${leg},=> ${entrylog[leg]}`); 
-    
+
   }
 }
   console.log(battleLog);
@@ -255,3 +255,5 @@ switch(morThan13 ||lesthan13){
 //      alert("you can not paly this game ");
 //      break;
 // }
+
+while 
