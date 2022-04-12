@@ -185,9 +185,11 @@ function printLogHandler() {
 
 //this is the simple for of
 let i=0;
-for(const enryLogf of battleLog) {
-  console.log(enryLogf);
+for(const entrylog of battleLog) {
   console.log(i++);
+  for(const leg in entrylog){
+    console.log(`${leg},=> ${entrylog[leg]}`); 
+  }
 }
   console.log(battleLog);
 }
