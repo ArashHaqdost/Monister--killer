@@ -159,3 +159,15 @@ attackBtn.addEventListener('click', attackHandler);
 strongAttackBtn.addEventListener('click', strongAttackHandler);
 healBtn.addEventListener('click', healPlayerHandler);
 logBtn.addEventListener('click',printLogHandler)
+
+// this is the logic and compertaive  operators
+
+const userName="ARash";
+const altName="";
+console.log(userName==="ARash");//genrate and print a boolean thats true
+console.log(userName);
+console.log(userName|| null)//
+console.log(userName||"ARash");
+console.log(userName && 'Anna'); // userName is truthy, hence second (!) value is returned => 'Anna'
+console.log(altName && 'Anna'); // altName is falsy, hence first value is returned => ''
+console.log(userName && '');
