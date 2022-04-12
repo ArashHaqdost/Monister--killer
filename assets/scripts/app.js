@@ -174,6 +174,9 @@ function healPlayerHandler() {
 }
 //fucntion print log handlar
 function printLogHandler() {
+for (i =20; i<10; i--){
+  console.log(i);
+}
   console.log(battleLog);
 }
 attackBtn.addEventListener('click', attackHandler);
@@ -203,36 +206,37 @@ console.log(altName && 'Anna'); // altName is falsy, hence first value is return
 //         break;
 //   }
 
-// let enterAge = prompt('Enter your age');
-// let morThan13 = parseInt(enterAge) > 13;
-// let lesthan13 = parseInt(enterAge) <= 13;
+let enterAge = prompt('Enter your age');
+let morThan13 = parseInt(enterAge) > 13;
+let lesthan13 = parseInt(enterAge) <= 13;
 
-// switch(morThan13 ||lesthan13){
-//   case morThan13:
-//       alert("you can not play this game");
-//       break;
-//   case lesthan13:
-//     alert("you can play this game");
-//     break;
+switch(morThan13 ||lesthan13){
+  case morThan13:
+      alert("you can not play this game");
+      break;
+  case lesthan13:
+    alert("you can play this game");
+    break;
+} 
+ // }
+// let age = prompt("enter your age");
+
+// switch (age){
+//   case 1:
+//   case 2:
+//   case 3:
+//   case 4:
+//   case 5:
+//   case 6:
+//   case 7:
+//   case 8:
+//   case 9:
+//   case 10:
+//   case 12:
+//   case 13:
+//      alert("you can play this game");
+//      break;
+//   default :
+//      alert("you can not paly this game ");
+//      break;
 // }
-let age = prompt("enter your age");
-
-switch (age){
-  case 1:
-  case 2:
-  case 3:
-  case 4:
-  case 5:
-  case 6:
-  case 7:
-  case 8:
-  case 9:
-  case 10:
-  case 12:
-  case 13:
-     alert("you can play this game");
-     break;
-  default :
-     alert("you can not paly this game ");
-     break;
-}
