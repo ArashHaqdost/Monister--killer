@@ -189,6 +189,7 @@ for(const entrylog of battleLog) {
   console.log(i++);
   for(const leg in entrylog){
     console.log(`${leg},=> ${entrylog[leg]}`); 
+    
   }
 }
   console.log(battleLog);
