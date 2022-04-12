@@ -174,8 +174,20 @@ function healPlayerHandler() {
 }
 //fucntion print log handlar
 function printLogHandler() {
-for (i =20; i>10; i--){
-  console.log(i);
+// for (i =20; i>10; i--){
+//   console.log(i);
+// }
+
+
+// for (i = 0; i<battleLog.length;i++){
+//   console.log(battleLog[i]);
+// }
+
+//this is the simple for of
+let i=0;
+for(const enryLogf of battleLog) {
+  console.log(enryLogf);
+  console.log(i++);
 }
   console.log(battleLog);
 }
