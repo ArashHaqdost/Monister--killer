@@ -227,17 +227,12 @@ console.log(altName && 'Anna'); // altName is falsy, hence first value is return
 let enterAge = prompt('Enter your age');
 let morThan13 = parseInt(enterAge) > 13;
 let lesthan13 = parseInt(enterAge) <= 13;
+if(morThan13||NaN){
+  throw{message : 'you are not good for this game!'};
+}
+else if(lesthan13){
+  alert('you can play this game :');
 
-switch (morThan13 || lesthan13) {
-  case morThan13:
-
-  
-    throw{message: 'you can not play this game'};
-
-    break;
-  case lesthan13:
-    alert('you can play this game');
-    break;
 }
 let j = 0;
 outerwhile: do {
