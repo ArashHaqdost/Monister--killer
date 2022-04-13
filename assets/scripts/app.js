@@ -246,26 +246,3 @@ outerwhile: do {
   }
   j++;
 } while (j < 4);
-
-// }
-// let age = prompt("enter your age");
-
-// switch (age){
-//   case 1:
-//   case 2:
-//   case 3:
-//   case 4:
-//   case 5:
-//   case 6:
-//   case 7:
-//   case 8:
-//   case 9:
-//   case 10:
-//   case 12:
-//   case 13:
-//      alert("you can play this game");
-//      break;
-//   default :https://javascript.info/while-for
-//      alert("you can not paly this game ");
-//      break;
-// }
