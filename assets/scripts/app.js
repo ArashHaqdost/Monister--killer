@@ -9,18 +9,23 @@ const LOG_EVENT_PLAYER_STRONG_ATTACK = 'STRONG_ATTACK';
 const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
 const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
-const enteredValidInput = parseInt(
-  prompt('enter your life and monister life here :', '')
-);
 
-let chosenMaxLife = parseInt(enteredValidInput);
-if (isNaN(chosenMaxLife) || chosenMaxLife <= 0) {
-  chosenMaxLife = 100;
+
+let battleLog = [];
+function gexMaxLive(){
+  const enteredValidInput = parseInt(prompt('enter your life and monister life here :', ''));
+  let pasedValue = parseInt(enteredValidInput);
+  if (isNaN(pasedValue) || pasedValue <= 0) {
+    throw {message: 'invalid input that is not a number :'};
+  }
+  return pasedValue;
 }
+
+let chosenMaxLife = gexMaxLive();
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
 let hasBonusLife = true;
-let battleLog = [];
+
 
 adjustHealthBars(chosenMaxLife);
 //wirte toLog fuction
@@ -174,24 +179,22 @@ function healPlayerHandler() {
 }
 //fucntion print log handlar
 function printLogHandler() {
-// for (i =20; i>10; i--){
-//   console.log(i);
-// }
+  // for (i =20; i>10; i--){
+  //   console.log(i);
+  // }
 
+  // for (i = 0; i<battleLog.length;i++){
+  //   console.log(battleLog[i]);
+  // }
 
-// for (i = 0; i<battleLog.length;i++){
-//   console.log(battleLog[i]);
-// }
-
-//this is the simple for of
-let i=0;
-for(const entrylog of battleLog) {
-  console.log(i++);
-  for(const leg in entrylog){
-    console.log(`${leg},=> ${entrylog[leg]}`); 
-
+  //this is the simple for of
+  let i = 0;
+  for (const entrylog of battleLog) {
+    console.log(i++);
+    for (const leg in entrylog) {
+      console.log(`${leg},=> ${entrylog[leg]}`);
+    }
   }
-}
   console.log(battleLog);
 }
 attackBtn.addEventListener('click', attackHandler);
@@ -225,29 +228,31 @@ let enterAge = prompt('Enter your age');
 let morThan13 = parseInt(enterAge) > 13;
 let lesthan13 = parseInt(enterAge) <= 13;
 
-switch(morThan13 ||lesthan13){
+switch (morThan13 || lesthan13) {
   case morThan13:
-      alert("you can not play this game");
-      break;
-  case lesthan13:
-    alert("you can play this game");
+
+  
+    throw{message: 'you can not play this game'};
+
     break;
-} 
-let j=0;
-outerwhile:do{
- console.log('this is the Outer whlie',j);
-
- innerfor:for (k=0; k<5; k++){
-   console.log('this is the inner for loops',k);
-   innerif:if (k==4){
-    break innerfor;
-   }
- }
- j++;
+  case lesthan13:
+    alert('you can play this game');
+    break;
 }
-while(j<4);
+let j = 0;
+outerwhile: do {
+  console.log('this is the Outer whlie', j);
 
- // }
+  innerfor: for (k = 0; k < 5; k++) {
+    console.log('this is the inner for loops', k);
+    innerif: if (k == 4) {
+      break innerfor;
+    }
+  }
+  j++;
+} while (j < 4);
+
+// }
 // let age = prompt("enter your age");
 
 // switch (age){
