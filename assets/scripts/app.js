@@ -233,6 +233,20 @@ switch(morThan13 ||lesthan13){
     alert("you can play this game");
     break;
 } 
+let j=0;
+outerwhile:do{
+ console.log('this is the Outer whlie',j);
+
+ innerfor:for (k=0; k<5; k++){
+   console.log('this is the inner for loops',k);
+   innerif:if (k==4){
+    break innerfor;
+   }
+ }
+ j++;
+}
+while(j<4);
+
  // }
 // let age = prompt("enter your age");
 
@@ -251,9 +265,7 @@ switch(morThan13 ||lesthan13){
 //   case 13:
 //      alert("you can play this game");
 //      break;
-//   default :
+//   default :https://javascript.info/while-for
 //      alert("you can not paly this game ");
 //      break;
 // }
-
-while 
