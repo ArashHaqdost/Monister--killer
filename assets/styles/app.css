@@ -18,7 +18,7 @@ progress {
   width: 80%;
   height: 2rem;
   color: #ff0062;
-  border: 1px solid #a927f5;
+  border: 1px solid #8b19cd;
 }
 
 progress[value]::-webkit-progress-bar,
